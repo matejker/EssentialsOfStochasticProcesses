@@ -31,3 +31,10 @@ format: requirements_tools
 typecheck: requirements_tools
 	poetry run mypy tests essentials_stochastics_processes
 
+.PHONY: notebook
+notebook: requirements_tools
+	poetry run jupyter notebook
+
+.PHONY: ipython
+ipython: requirements_tools
+	poetry run ipython
