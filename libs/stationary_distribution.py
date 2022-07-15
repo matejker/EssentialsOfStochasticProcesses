@@ -14,3 +14,12 @@ def get_stationary_distribution(p: np.ndarray) -> np.ndarray:
 
     # It will raise LinAlgError if it is Singular matrix or other
     return np.linalg.inv(a)[-1]
+
+
+def is_symmetric(a: np.ndarray) -> bool:
+    return a == a.T
+
+
+def check_detailed_balance_condition(p: np.ndarray) -> bool:
+    pi = get_stationary_distribution(p)
+    return is_symmetric(pi * p.T)
