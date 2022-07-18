@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def get_stationary_distribution(p: np.ndarray) -> np.ndarray:
     n, m = p.shape
     if n != m:
@@ -12,7 +13,7 @@ def get_stationary_distribution(p: np.ndarray) -> np.ndarray:
     a = p - np.eye(n)
     a[:, n - 1] = np.ones(n)
 
-    # It will raise LinAlgError if it is Singular matrix or other
+    # It will raise LinAlgError if it is Singular matrix or other problems
     return np.linalg.inv(a)[-1]
 
 
