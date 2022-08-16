@@ -1,7 +1,7 @@
 import numpy as np
 
 
-def get_stationary_distribution(p: np.ndarray) -> np.ndarray:
+def get_stationary_distribution(p: np.ndarray, rates: bool = False) -> np.ndarray:
     n, m = p.shape
     if n != m:
         raise ValueError(f"P is not a square matrix {n}!={m}")
@@ -9,8 +9,13 @@ def get_stationary_distribution(p: np.ndarray) -> np.ndarray:
     # Two state markov chain
     if n == 2:
         return np.array([p[1][0], p[0][1]]) / (p[1][0] + p[0][1])
-
-    a = p - np.eye(n)
+    
+    # Continues Time Markov chains with rates
+    if rates:
+        a = p
+    else:
+        a = p - np.eye(n)
+    
     a[:, n - 1] = np.ones(n)
 
     # It will raise LinAlgError if it is Singular matrix or other problems
@@ -24,3 +29,4 @@ def is_symmetric(a: np.ndarray) -> bool:
 def check_detailed_balance_condition(p: np.ndarray) -> bool:
     pi = get_stationary_distribution(p)
     return is_symmetric(pi * p.T)
+
