@@ -1,14 +1,4 @@
 # EssentialsOfStochasticProcesses
 
-Solutions and simulations from the Essentials of Stochastic Processes by Richard Durrett
-
-### Development
-In this repo we use a few tools to keep the code clean, styled and properly tested:
-```shell
-make lint  # runs flake8 and Black check
-make autoformat  # runs Black formating
-make typecheck  # runs mypy
-make test  # runs unit [py]tests
-```
-
-_This package was created with Cookiecutter and the **[matejker](https://github.com/matejker) /** [cookiecutter-poetry](https://github.com/matejker/cookiecutter-poetry) project template._
+Solutions and simulations from the [Essentials of Stochastic Processes](https://services.math.duke.edu/~rtd/EOSP/EOSP2021.pdf) by [Richard Durrett](https://services.math.duke.edu/~rtd/).
+There is some overlap with those [solutions](https://www.studocu.com/row/document/central-university-of-finance-and-economics/stochastic-process/essentials-of-stochastic-processes-manual-solution/23978563)
